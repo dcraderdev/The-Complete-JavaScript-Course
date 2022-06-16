@@ -1,0 +1,60 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #a1d4cf;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  padding: 40px;
+}
+
+h1 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+p {
+  margin-bottom: 20px;
+}
+
+.first {
+  color: rgb(1, 19, 78);
+}
+
+#your-name {
+  background-color: #77d3ca;
+  border: 3px solid #52cfc3;
+  width: 400px;
+  padding: 25px;
+  margin-top: 50px;
+  margin-left: 300;
+  /* margin-right: 20; only one seems to work.. cant have right and left */
+}
+
+h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+input,
+button {
+  padding: 10px;
+  font-size: 16px;
+}
+
+a {
+  background-color: rgb(199, 199, 179);
+}
+
+#your-name h2 {
+  color: rgb(7, 116, 79);
+}
+
+#course-image {
+  padding: 5px;
+  width: 300px;
+  height: 300px;
+}
