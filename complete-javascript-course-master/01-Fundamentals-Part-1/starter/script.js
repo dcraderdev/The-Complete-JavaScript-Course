@@ -338,7 +338,7 @@ console.log('23' - '10' - 3 + ' years old');
 console.log(Boolean(0));
 console.log(Boolean(undefined));
 console.log(Boolean('Donovan'));
-console.log(Boolean({}}));
+console.log(Boolean({}));
 console.log(Boolean(''));
 
 
