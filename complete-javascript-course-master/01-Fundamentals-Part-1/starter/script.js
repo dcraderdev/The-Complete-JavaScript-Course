@@ -297,7 +297,7 @@ if(markHigherBMI = true){
 
 
 
-//  Type Conversion and Coercion
+//  Type Conversion
 
 const inputYear = '1991';
 
@@ -306,7 +306,23 @@ console.log(Number(inputYear) + 18);
 console.log(inputYear + 18);
 // 199118
 console.log(Number('Donovan'));
-// NaN - not a number
+// NaN - not a number, still identifies as a number but causes errors
+
+
+
+//  Type Coercion
+
+console.log('I am ' + 30 + ' years old');
+// I am 30 years old
+// this works because of type coercion behind the scenes in JS.
+// A + converts the number to a string and keeps strings as strings.
+
+
+console.log('23' - '10' - 3);
+// 10
+// A - converts the string to a number and keeps numbers as numbers.
+
+console.log('23' - '10' - 3 + ' years old');
 
 
 
@@ -314,3 +330,21 @@ console.log(Number('Donovan'));
 
 
 
+// Truthy and Falsy Values
+
+// FIVE FALSY VALUES: 0, '', undefined, null, NaN
+
+
+console.log(Boolean(0));
+console.log(Boolean(undefined));
+console.log(Boolean('Donovan'));
+console.log(Boolean({}}));
+console.log(Boolean(''));
+
+
+const money = 100;
+if (money) {
+  console.log("Don't spend it all ;)");
+} else {
+  console.log('You should get a job!')
+}
