@@ -305,3 +305,12 @@ console.log(Number(inputYear) + 18);
 // 2009
 console.log(inputYear + 18);
 // 199118
+console.log(Number('Donovan'));
+// NaN - not a number
+
+
+
+
+
+
+
