@@ -47,7 +47,7 @@ console.log(job);
 
 // Basic Operators
 
-// Operators allow us to transfer values and combine mulitple values 
+// Operators allow us to transfer values and combine mulitple values
 
 // arithmetic Operators
 
@@ -57,5 +57,9 @@ const monaBirthYear = 1992
 const monaAge = monaBirthYear - currentYear
 
 
+const age = '18';
+if (age === 18) console.log('You just became an adult XD (strict)');
+if (age == 18) console.log('You just became an adult XD (loose)');
 
 
+prompt("What's your favorite number?");
