@@ -418,13 +418,12 @@ if (hasDriversLicense && hasGoodVision && !isTired) {
 
 
 const dolphinScore = 96 + 108 + 89;
-const koalaScore = 88 + 91 + 200
+const koalaScore = 100 + 95 + 101
 
 const dolphinAverage = dolphinScore/3
 const koalaAverage = koalaScore/3
 
-  console.log(dolphinAverage);
-  console.log(koalaAverage);
+  console.log(dolphinAverage, koalaAverage);
 
 
 if (dolphinAverage > koalaAverage) {
@@ -436,8 +435,11 @@ if (dolphinAverage > koalaAverage) {
 
 if (dolphinAverage > koalaAverage && dolphinAverage > 100) {
   console.log(`Dolphins win!`);
-} else if (koalaAverage > 100) {
+} else if (koalaAverage > dolphinAverage && koalaAverage > 100) {
   console.log(`Koalas win!`);
-} else {
+} else if (koalaAverage === dolphinAverage && koalaAverage > 100 && dolphinAverage > 100) {
+  console.log("Its a tie!")
+}
+else {
   console.log(`No one wins!`)
 }
