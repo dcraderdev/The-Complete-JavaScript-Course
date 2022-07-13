@@ -1,5 +1,7 @@
-// let js = 'amazing';
-// console.log(40 + 8 + 23 - 10);
+/*
+let js = 'amazing';
+console.log(40 + 8 + 23 - 10);
+
 
 // // a value is basically a piece of Data
 // // most basic piece of information we have in programming
@@ -347,7 +349,7 @@
 //   console.log('You should get a job!')
 // }
 
-
+/*
 const favNum = prompt("What's your favorite number?");
 console.log(favNum);
 console.log(typeof favNum);
@@ -399,7 +401,7 @@ if (hasDriversLicense && hasGoodVision && !isTired) {
 // Coding Challenge #3
 // There are two gymnastics teams, Dolphins and Koalas. They compete against each other 3 times. The winner with the highest average score wins a trophy!
 
-
+/*
 // Your tasks:
 
 // 1. Calculatetheaveragescoreforeachteam,usingthetestdatabelow
@@ -442,4 +444,34 @@ if (dolphinAverage > koalaAverage && dolphinAverage > 100) {
 }
 else {
   console.log(`No one wins!`)
+}
+
+*/
+
+const day = 'tuesday'
+
+switch(day) {
+  case 'monday':
+    console.log('Plan course structure');
+    console.log('Go to code meetup');
+    break;
+  case 'tuesday':
+    console.log('Prepare theory videos');
+    console.log('Go eat tacos');
+    break;
+  case 'wednesday':
+    console.log('Prepare theory videos');
+    console.log('Go eat more tacos');
+    break;
+  case 'thursday':
+    console.log('Prepare theory videos');
+    console.log('Go eat sushi');
+    break;
+   case 'friday':
+   case 'saturday':
+   case 'sunday':
+    console.log('RELAXXXX');
+    break;
+    default:
+      console.log('Not a valid day.')
 }
