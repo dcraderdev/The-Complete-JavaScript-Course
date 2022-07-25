@@ -481,3 +481,33 @@ console.log(calcAverage(tips));
 //calculate every tip and total value for every calue we used in the other challenge
 
 // use .push
+
+// Developer Skills & Editor Setup
+// Coding Challenge #1
+// Given an array of forecasted maximum temperatures, the thermometer displays a string with the given temperatures. Example: [17, 21, 23] will print "... 17oC in 1 days ... 21oC in 2 days ... 23oC in 3 days ..."
+// Your tasks:
+// 1. Createafunction'printForecast'whichtakesinanarray'arr'andlogsa string like the above to the console. Try it with both test datasets.
+// 2. Usetheproblem-solvingframework:Understandtheproblemandbreakitup into sub-problems!
+// Test data:
+// § Data 1: [17, 21, 23]
+// § Data2:[12,5,-5,0,4]
+// GOOD LUCK 😀
+
+// `... ${} in 1 days ... ${} in 2 days ... ${} in 3 days ...`
+
+const dataOne = [17, 21, 23];
+const dataTwo = [12.5, 5, -5, 0, 4];
+
+const printForecast = function (arr) {
+  let forecast = ""
+  let count = 1
+  for (let i = 0; i < arr.length; i++, count++) {
+    forecast += (`...${arr[i]}°C in ${count} days `);
+  }
+  console.log(forecast);
+  return forecast;
+}
+
+
+
+printForecast(dataOne);
