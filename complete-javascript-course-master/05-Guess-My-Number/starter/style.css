@@ -106,7 +106,7 @@ h1 {
 }
 
 .btn:hover {
-  background-color: #ccc;
+  background-color: #225961;
 }
 
 .message {
@@ -116,4 +116,14 @@ h1 {
 
 .label-score {
   margin-bottom: 2rem;
+}
+
+.header {
+  border: none;
+  background-color: #eee;
+  color: #222;
+  font-size: 4rem;
+  font-family: inherit;
+  padding: 2rem 3rem;
+  cursor: pointer;
 }

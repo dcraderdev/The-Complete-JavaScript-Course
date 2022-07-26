@@ -23,7 +23,11 @@ let number = Math.trunc(Math.random() * 20 + 1)
 let score = 20; // our initial score, will be changed later
 let highscore = 0;
 
-//this reveals what the secret number is by overwriting the .number class
+const displayMessage = function (message) {
+  document.querySelector('.message').textContent = message;
+};
+
+// this reveals what the secret number is by overwriting the .number class
 // this usually shows a question mark in the middle of the screen
 
 document.querySelector('.check').addEventListener('click', function () {
@@ -32,18 +36,26 @@ document.querySelector('.check').addEventListener('click', function () {
 
   // when there is no input
   if (!guess) {
-    document.querySelector('.message').textContent = 'No number!';
+    // document.querySelector('.message').textContent = 'No number!';
+    displayMessage('No number!');
     // when player wins
     // we can also edit css attributes to change from within our js code
   } else if (guess === number) {
     //changes message
-    document.querySelector('.message').textContent = `You got it!!`;
+    // document.querySelector('.message').textContent = `You got it!!`;
+    displayMessage('You got it!!');
     // changes background color
-    document.querySelector('body').style.backgroundColor = '#60b347';
+    document.querySelector('body').style.backgroundColor = '#225961';
     // makes number box bigger
-    document.querySelector('.number').style.width = '30rem';
+    document.querySelector('.number').style.width = '1000rem';
     // shows number when guessed correctly
     document.querySelector('.number').textContent = number;
+    // enlarges header and changes color
+    //document.querySelector('.header').style.height = '5rem';
+    document.querySelector('body').style.backgroundColor = '#G600';
+    document.querySelector('.header').textContent = 'WOOOOOO!';
+
+
     // replaces our highscore text if our score is higher than our old highscore
     if (score > highscore) {
       highscore = score;
@@ -53,11 +65,13 @@ document.querySelector('.check').addEventListener('click', function () {
     // when guess is wrong (refactored from code below)
   } else if (guess !== number) {
     if (score > 1) {
-      document.querySelector('.message').textContent = guess > number ? `${guess} is too big!` : `${guess} is too small!`;
+      // document.querySelector('.message').textContent = guess > number ? `${guess} is too big!` : `${guess} is too small!`;
+      displayMessage(guess > number ? `${guess} is too big!` : `${guess} is too small!`);
       score--;
       document.querySelector('.score').textContent = score;
     } else {
-      document.querySelector('.message').textContent = `YOU LOSE!`;
+      //document.querySelector('.message').textContent = `YOU LOSE!`;
+      displayMessage('YOU LOSE!');
       document.querySelector('.score').textContent = 0;
     }
 
@@ -132,7 +146,8 @@ document.querySelector('.again').addEventListener('click', function () {
   document.querySelector('.score').textContent = 20;
   number = Math.trunc(Math.random() * 20 + 1);
   document.querySelector('body').style.backgroundColor = '#222';
-  document.querySelector('.message').textContent = `Start guessing...`;
+  //document.querySelector('.message').textContent = `Start guessing...`;
+  displayMessage('Start guessing...');
   document.querySelector('.number').style.width = '15rem';
   document.querySelector('.number').textContent = '?';
   document.querySelector('.guess').value = '';
@@ -143,5 +158,3 @@ document.querySelector('.again').addEventListener('click', function () {
 // if (score > highscore) {
 //   document.querySelector('.highscore').textcontent = score;
 // };
-
-console.log('test');
