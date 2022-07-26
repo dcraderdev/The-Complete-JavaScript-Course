@@ -20,7 +20,8 @@
 // event list is something that happens on the page, lots of different events that can happen
 
 let number = Math.trunc(Math.random() * 20 + 1)
-let score = 20 // our initial score, will be changed later
+let score = 20; // our initial score, will be changed later
+let highscore = 0;
 
 //this reveals what the secret number is by overwriting the .number class
 // this usually shows a question mark in the middle of the screen
@@ -42,29 +43,46 @@ document.querySelector('.check').addEventListener('click', function () {
     // makes number box bigger
     document.querySelector('.number').style.width = '30rem';
     // shows number when guessed correctly
-    document.querySelector('.number').textContent = number
+    document.querySelector('.number').textContent = number;
+    // replaces our highscore text if our score is higher than our old highscore
+    if (score > highscore) {
+      highscore = score;
+      document.querySelector('.highscore').textContent = highscore;
+    }
+
+    // when guess is wrong (refactored from code below)
+  } else if (guess !== number) {
+    if (score > 1) {
+      document.querySelector('.message').textContent = guess > number ? `${guess} is too big!` : `${guess} is too small!`;
+      score--;
+      document.querySelector('.score').textContent = score;
+    } else {
+      document.querySelector('.message').textContent = `YOU LOSE!`;
+      document.querySelector('.score').textContent = 0;
+    }
 
 
+    //non refactored code - duplicates too many things
     // when player's guess is too big
-  } else if (guess > number) {
-    if (score > 1) {
-      document.querySelector('.message').textContent = `${guess} is too big!`;
-      score--;
-      document.querySelector('.score').textContent = score;
-    } else {
-      document.querySelector('.message').textContent = `YOU LOSE!`;
-      document.querySelector('.score').textContent = 0;
-    }
-    // when player's guess is too small
-  } else if (guess < number) {
-    if (score > 1) {
-      document.querySelector('.message').textContent = `${guess} is too small!`;
-      score--;
-      document.querySelector('.score').textContent = score;
-    } else {
-      document.querySelector('.message').textContent = `YOU LOSE!`;
-      document.querySelector('.score').textContent = 0;
-    }
+    // } else if (guess > number) {
+    //   if (score > 1) {
+    //     document.querySelector('.message').textContent = `${guess} is too big!`;
+    //     score--;
+    //     document.querySelector('.score').textContent = score;
+    //   } else {
+    //     document.querySelector('.message').textContent = `YOU LOSE!`;
+    //     document.querySelector('.score').textContent = 0;
+    //   }
+    //   // when player's guess is too small
+    // } else if (guess < number) {
+    //   if (score > 1) {
+    //     document.querySelector('.message').textContent = `${guess} is too small!`;
+    //     score--;
+    //     document.querySelector('.score').textContent = score;
+    //   } else {
+    //     document.querySelector('.message').textContent = `YOU LOSE!`;
+    //     document.querySelector('.score').textContent = 0;
+    //   }
   }
 });
 
@@ -118,5 +136,10 @@ document.querySelector('.again').addEventListener('click', function () {
   document.querySelector('.number').style.width = '15rem';
   document.querySelector('.number').textContent = '?';
   document.querySelector('.guess').value = '';
-
 });
+
+// let highscore = 0;
+
+// if (score > highscore) {
+//   document.querySelector('.highscore').textcontent = score;
+// };
