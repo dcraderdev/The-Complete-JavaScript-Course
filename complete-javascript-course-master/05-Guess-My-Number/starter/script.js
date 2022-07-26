@@ -143,3 +143,5 @@ document.querySelector('.again').addEventListener('click', function () {
 // if (score > highscore) {
 //   document.querySelector('.highscore').textcontent = score;
 // };
+
+console.log('test');
