@@ -13,22 +13,36 @@ const btnCloseModal = document.querySelector('.close-modal');
 // to counteract this we use .querySelectorAll
 const btnsOpenModal = document.querySelectorAll('.show-modal');
 
-console.log(btnsOpenModal);
+const closeModal = function () {
+  modal.classList.add('hidden');
+  overlay.classList.add('hidden');
+};
 
-// this for-loop gives us access to all the .show-modal objects
+const openModal = function () {
+  //console.log('Button clicked');
+  modal.classList.remove('hidden');
+  overlay.classList.remove('hidden');
+};
+
 for (let i = 0; i < btnsOpenModal.length; i++)
-  btnsOpenModal[i].addEventListener('click', function () {
-    // logs to the console that we clicked a button when we click a button
-    console.log('Button clicked');
-    // this removes the method attached to this property class
-    // which is removing 'hidden' from the modal classes
-    // do not use .hidden, only 'hidden'
-    // we can also add classes or check what classes are contained
-    modal.classList.remove('hidden');
-    // this removes the hidden from the overlay class so the window blurs
-    overlay.classList.remove('hidden');
+  btnsOpenModal[i].addEventListener('click', openModal);
 
-  });
+// // this for-loop gives us access to all the .show-modal objects
+// for (let i = 0; i < btnsOpenModal.length; i++)
+//   btnsOpenModal[i].addEventListener('click', function () {
+//     // logs to the console that we clicked a button when we click a button
+//     console.log('Button clicked');
+//     // this removes the method attached to this property class
+//     // which is removing 'hidden' from the modal classes
+//     // do not use .hidden, only 'hidden'
+//     // we can also add classes or check what classes are contained
+//     modal.classList.remove('hidden');
+//     // this removes the hidden from the overlay class so the window blurs
+//     overlay.classList.remove('hidden');
+
+//   });
+
+
 
 
 // btnCloseModal.addEventListener('click', function () {
@@ -41,14 +55,23 @@ for (let i = 0; i < btnsOpenModal.length; i++)
 //   overlay.classList.add('hidden');
 // });
 
-//since the code above repeats the same functionality twice we are going to create a function that we can call that does all these same functions but this way we dont have to write the same code over and over
+//since the code above repeats the same functionality twice we are going to create a function that we can call that does all these same functions but this way we dont have to write the same code over and over (copied to top with other const for consistency)
+// const closeModal = function () {
+//   modal.classList.add('hidden');
+//   overlay.classList.add('hidden');
+// };
 
 
-
-const closeModal = function () {
-  modal.classList.add('hidden');
-  overlay.classList.add('hidden');
-};
 
 btnCloseModal.addEventListener('click', closeModal);
 overlay.addEventListener('click', closeModal);
+
+// this logs the keyboard button pressed along with its 'key'
+// we store the button being pressed in the function variable 'e'
+// and then log it to the console and extract its 'key' with .key
+document.addEventListener('keydown', function (e) {
+  // console.log(e.key); //not really needed
+  if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+    closeModal();
+  }
+});
