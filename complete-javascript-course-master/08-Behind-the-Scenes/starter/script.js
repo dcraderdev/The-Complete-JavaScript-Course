@@ -28,4 +28,36 @@
 //
 
 // event loop concurrency model
+
+
+// hoisting - declaring variables
+
+
+
 //
+console.log(me);
+//console.log(job);
+//console.log(year);
+
+
+var me = 'Donovan';
+// vaariables made using var are hoisted using 'undefined'
+let job = 'newb';
+// cannot access job before initilization
+const year = '2022';
+
+
+console.log(addDecl(2, 3));
+// console.log(addExpr(2, 3));
+// console.log(addArrow(2, 3));
+//function declarations
+
+function addDecl(a, b) {
+  return a + b;
+}
+
+const addExpr = function (a, b) {
+  return a + b;
+}
+
+const addArrow = (a, b) => a + b
