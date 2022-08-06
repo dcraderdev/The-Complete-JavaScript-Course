@@ -61,3 +61,32 @@ const addExpr = function (a, b) {
 }
 
 const addArrow = (a, b) => a + b
+
+
+
+// the .this keyword
+
+// the this keyword or this variable is created for every function execution context
+
+// alwys takes the values, or 'points' to the owner of the fucntion which the keyword is being used
+
+// can be used as a method - pointing to the object
+// can be used as a function - not attached to object or method and only used in strict mode
+// can be used as a arrow function - points to the parent function
+//
+const donovan = {
+  birthYear: 1992,
+  name: 'Donovan',
+}
+console.log(donovan);
+console.log(this);
+
+const calcAge = function (birthYear) {
+  return 2022 - birthYear;
+};
+
+console.log(calcAge(donovan.birthYear));
+
+// to call a function on a 'this' object we need to use this as a parameter
+
+donovan.calcAge();
